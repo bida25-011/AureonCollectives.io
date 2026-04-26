@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aureon Collective</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Aureon Collective</h1>
+    <p>Trusted reseller of Apple & Samsung smartphones in Botswana</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#iphoneCatalog">iPhones</a></li>
+      <li><a href="#samsungCatalog">Samsung</a></li>
+      <li><a href="#specialOrders">Special Orders</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Featured Products Slideshow -->
+    <section id="slideshowSection">
+      <h2>Featured Products</h2>
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <div class="slide-content">
+            <h3>iPhone 14</h3>
+            <p class="price">From P7,500</p>
+            <p>Latest generation with advanced camera and performance</p>
+            <button class="buy-btn">Learn More</button>
+          </div>
+        </div>
+
+        <div class="slide fade">
+          <div class="slide-content">
+            <h3>iPhone 13</h3>
+            <p class="price">From P6,200</p>
+            <p>Powerful A15 Bionic chip with stunning display</p>
+            <button class="buy-btn">Learn More</button>
+          </div>
+        </div>
+
+        <div class="slide fade">
+          <div class="slide-content">
+            <h3>Samsung S22 Ultra</h3>
+            <p class="price">From P7,800</p>
+            <p>Premium flagship with exceptional 200MP camera</p>
+            <button class="buy-btn">Learn More</button>
+          </div>
+        </div>
+
+        <div class="slide fade">
+          <div class="slide-content">
+            <h3>Samsung S21</h3>
+            <p class="price">From P5,700</p>
+            <p>Reliable performance with great camera quality</p>
+            <button class="buy-btn">Learn More</button>
+          </div>
+        </div>
+
+        <div class="slide fade">
+          <div class="slide-content">
+            <h3>iPhone 12 Pro</h3>
+            <p class="price">From P6,500</p>
+            <p>Pro-grade features with LiDAR scanner</p>
+            <button class="buy-btn">Learn More</button>
+          </div>
+        </div>
+
+        <!-- Navigation arrows -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      </div>
+
+      <!-- Slide indicators/dots -->
+      <div class="dots-container">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+    </section>
+
+    <!-- iPhone Catalog -->
+    <section id="iphoneCatalog">
+      <h2>Apple iPhones</h2>
+      <div class="catalog-container">
+        <div class="catalog" id="iphoneGrid">
+          <div class="card"><h3>iPhone 11</h3><p>64GB — P4500</p><p>128GB — P4600</p><p>256GB — P5000</p><button class="buy-btn">View Details</button></div>
+          <div class="card"><h3>iPhone 11 Pro</h3><p>64GB — P5100</p><p>256GB — P5300</p><button class="buy-btn">View Details</button></div>
+          <div class="card"><h3>iPhone 12</h3><p>64GB — P5200</p><p>128GB — P5400</p><p>256GB — P5800</p><button class="buy-btn">View Details</button></div>
+          <div class="card"><h3>iPhone 12 Pro</h3><p>128GB — P6500</p><p>256GB — P7000</p><button class="buy-btn">View Details</button></div>
+          <div class="card"><h3>iPhone 13</h3><p>128GB — P6200</p><p>256GB — P6800</p><button class="buy-btn">View Details</button></div>
+          <div class="card"><h3>iPhone 14</h3><p>128GB — P7500</p><p>256GB — P8200</p><button class="buy-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-btn prev-btn" onclick="scrollCatalog('iphoneGrid', -300)">← Previous</button>
+        <button class="nav-btn next-btn" onclick="scrollCatalog('iphoneGrid', 300)">Next →</button>
+      </div>
+    </section>
+
+    <!-- Samsung Catalog -->
+    <section id="samsungCatalog">
+      <h2>Samsung Phones</h2>
+      <div class="catalog-container">
+        <div class="catalog" id="samsungGrid">
+          <div class="card"><h3>Samsung S21</h3><p>128GB — P5700</p><button class="buy-btn">View Details</button></div>
+          <div class="card"><h3>Samsung S21 Plus</h3><p>128GB — P6000</p><button class="buy-btn">View Details</button></div>
+          <div class="card"><h3>Samsung S21 Ultra</h3><p>256GB — P7500</p><button class="buy-btn">View Details</button></div>
+          <div class="card"><h3>Samsung S22</h3><p>128GB — P6200</p><p>256GB — P6800</p><button class="buy-btn">View Details</button></div>
+          <div class="card"><h3>Samsung S22 Plus</h3><p>128GB — P6800</p><p>256GB — P7200</p><button class="buy-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-btn prev-btn" onclick="scrollCatalog('samsungGrid', -300)">← Previous</button>
+        <button class="nav-btn next-btn" onclick="scrollCatalog('samsungGrid', 300)">Next →</button>
+      </div>
+    </section>
+
+    <!-- Special Orders -->
+    <section class="upload-section" id="specialOrders">
+      <h2>Special Orders</h2>
+      <p>Attach a picture of the clothing item you wish to purchase:</p>
+      <input type="file" accept="image/*">
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Trusted reseller of Apple & Samsung smartphones in Botswana</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><strong>Phone:</strong> +267 74883525</p>
+        <p><strong>Email:</strong> tshimologononofo24@gmail.com</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/26774883525" target="_blank">Chat with us</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Location</h3>
+        <p>Gaborone, Botswana</p>
+        <p>Available for nationwide delivery</p>
+      </div>
+    </div>
+    <p>&copy; 2026 Aureon Collective</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    let slideTimer;
+
+    function scrollCatalog(gridId, scrollAmount) {
+      const grid = document.getElementById(gridId);
+      grid.parentElement.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    // Slideshow functions
+    function changeSlide(n) {
+      clearTimeout(slideTimer);
+      showSlide(slideIndex += n);
+      autoSlide();
+    }
+
+    function currentSlide(n) {
+      clearTimeout(slideTimer);
+      showSlide(slideIndex = n);
+      autoSlide();
+    }
+
+    function showSlide(n) {
+      const slides = document.getElementsByClassName('slide');
+      const dots = document.getElementsByClassName('dot');
+
+      if (n >= slides.length) {
+        slideIndex = 0;
+      }
+      if (n < 0) {
+        slideIndex = slides.length - 1;
+      }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('active');
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove('active');
+      }
+
+      slides[slideIndex].classList.add('active');
+      dots[slideIndex].classList.add('active');
+    }
+
+    function autoSlide() {
+      slideTimer = setTimeout(() => {
+        slideIndex++;
+        showSlide(slideIndex);
+        autoSlide();
+      }, 5000); // Change slide every 5 seconds
+    }
+
+    // Initialize slideshow
+    document.addEventListener('DOMContentLoaded', () => {
+      showSlide(slideIndex);
+      autoSlide();
+    });
+  </script>
+</body>
+</html>
