@@ -1,0 +1,3 @@
+*** Begin Patch
+*** Delete File: c:\Users\Administrator\WMD_ASSSIGNMENT-2026\structure.html
+*** End Patch

@@ -3,211 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aureon Collective</title>
+  <title>Aureon Collective - Premium Smartphone Store in Botswana</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Aureon Collective</h1>
-    <p>Trusted reseller of Apple & Samsung smartphones in Botswana</p>
+  <header class="site-header bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="Images/logo.png" alt="Aureon Collective" style="height:36px; margin-right:10px;">
+        <span class="fw-bold">Aureon Collective</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="request.html">Request</a></li>
+        </ul>
+        <div class="d-flex align-items-center ms-lg-4">
+          <button id="themeToggle" class="btn btn-outline-primary me-3">Dark Mode</button>
+          <div class="cart-counter text-center px-3 py-2 rounded-pill bg-primary text-white">Cart <span id="cartCount">0</span></div>
+        </div>
+      </div>
+    </nav>
   </header>
-
-  <nav>
-    <ul>
-      <li><a href="#iphoneCatalog">iPhones</a></li>
-      <li><a href="#samsungCatalog">Samsung</a></li>
-      <li><a href="#specialOrders">Special Orders</a></li>
-    </ul>
-  </nav>
-
   <main>
-    <!-- Featured Products Slideshow -->
-    <section id="slideshowSection">
-      <h2>Featured Products</h2>
-      <div class="slideshow-container">
-        <div class="slide fade">
-          <div class="slide-content">
-            <h3>iPhone 14</h3>
-            <p class="price">From P7,500</p>
-            <p>Latest generation with advanced camera and performance</p>
-            <button class="buy-btn">Learn More</button>
-          </div>
+    <section class="hero-section">
+      <div class="hero-banner position-relative text-white" style="background-image:url('Images/Iphone13.png'); background-size:cover; background-position:center; min-height:360px;">
+        <div class="container h-100 d-flex flex-column justify-content-center align-items-start py-4">
+          <p class="eyebrow">Premium Botswana Smartphone Store</p>
+          <h1 class="display-5 fw-bold">Your everyday essential</h1>
+          <p class="lead">Apple and Samsung phones delivered with confidence in Gaborone.</p>
+          <a href="#products" class="btn btn-lg btn-brand">Browse Phones</a>
         </div>
-
-        <div class="slide fade">
-          <div class="slide-content">
-            <h3>iPhone 13</h3>
-            <p class="price">From P6,200</p>
-            <p>Powerful A15 Bionic chip with stunning display</p>
-            <button class="buy-btn">Learn More</button>
-          </div>
-        </div>
-
-        <div class="slide fade">
-          <div class="slide-content">
-            <h3>Samsung S22 Ultra</h3>
-            <p class="price">From P7,800</p>
-            <p>Premium flagship with exceptional 200MP camera</p>
-            <button class="buy-btn">Learn More</button>
-          </div>
-        </div>
-
-        <div class="slide fade">
-          <div class="slide-content">
-            <h3>Samsung S21</h3>
-            <p class="price">From P5,700</p>
-            <p>Reliable performance with great camera quality</p>
-            <button class="buy-btn">Learn More</button>
-          </div>
-        </div>
-
-        <div class="slide fade">
-          <div class="slide-content">
-            <h3>iPhone 12 Pro</h3>
-            <p class="price">From P6,500</p>
-            <p>Pro-grade features with LiDAR scanner</p>
-            <button class="buy-btn">Learn More</button>
-          </div>
-        </div>
-
-        <!-- Navigation arrows -->
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
-      </div>
-
-      <!-- Slide indicators/dots -->
-      <div class="dots-container">
-        <span class="dot" onclick="currentSlide(0)"></span>
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
       </div>
     </section>
 
-    <!-- iPhone Catalog -->
-    <section id="iphoneCatalog">
-      <h2>Apple iPhones</h2>
-      <div class="catalog-container">
-        <div class="catalog" id="iphoneGrid">
-          <div class="card"><h3>iPhone 11</h3><p>64GB — P4500</p><p>128GB — P4600</p><p>256GB — P5000</p><button class="buy-btn">View Details</button></div>
-          <div class="card"><h3>iPhone 11 Pro</h3><p>64GB — P5100</p><p>256GB — P5300</p><button class="buy-btn">View Details</button></div>
-          <div class="card"><h3>iPhone 12</h3><p>64GB — P5200</p><p>128GB — P5400</p><p>256GB — P5800</p><button class="buy-btn">View Details</button></div>
-          <div class="card"><h3>iPhone 12 Pro</h3><p>128GB — P6500</p><p>256GB — P7000</p><button class="buy-btn">View Details</button></div>
-          <div class="card"><h3>iPhone 13</h3><p>128GB — P6200</p><p>256GB — P6800</p><button class="buy-btn">View Details</button></div>
-          <div class="card"><h3>iPhone 14</h3><p>128GB — P7500</p><p>256GB — P8200</p><button class="buy-btn">View Details</button></div>
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center gx-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="feature-box p-4 rounded-4 shadow-sm bg-white">
+              <h2>Welcome to Aureon Collective</h2>
+              <p class="lead">Your premium smartphone destination in Botswana. Shop the latest Apple and Samsung phones with expert service and secure checkout.</p>
+              <div class="d-flex gap-3 flex-wrap mt-4">
+                <div class="badge rounded-pill bg-primary text-white px-3 py-2">Premium Quality</div>
+                <div class="badge rounded-pill bg-secondary text-white px-3 py-2">Gaborone Delivery</div>
+                <div class="badge rounded-pill bg-success text-white px-3 py-2">Verified Apple & Samsung</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img src="Images/Iphone11.png" alt="Premium smartphone" class="img-fluid rounded-4 shadow-sm">
+          </div>
         </div>
-      </div>
-      <div class="navigation-buttons">
-        <button class="nav-btn prev-btn" onclick="scrollCatalog('iphoneGrid', -300)">← Previous</button>
-        <button class="nav-btn next-btn" onclick="scrollCatalog('iphoneGrid', 300)">Next →</button>
       </div>
     </section>
 
-    <!-- Samsung Catalog -->
-    <section id="samsungCatalog">
-      <h2>Samsung Phones</h2>
-      <div class="catalog-container">
-        <div class="catalog" id="samsungGrid">
-          <div class="card"><h3>Samsung S21</h3><p>128GB — P5700</p><button class="buy-btn">View Details</button></div>
-          <div class="card"><h3>Samsung S21 Plus</h3><p>128GB — P6000</p><button class="buy-btn">View Details</button></div>
-          <div class="card"><h3>Samsung S21 Ultra</h3><p>256GB — P7500</p><button class="buy-btn">View Details</button></div>
-          <div class="card"><h3>Samsung S22</h3><p>128GB — P6200</p><p>256GB — P6800</p><button class="buy-btn">View Details</button></div>
-          <div class="card"><h3>Samsung S22 Plus</h3><p>128GB — P6800</p><p>256GB — P7200</p><button class="buy-btn">View Details</button></div>
+    <section id="products" class="py-5">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-3">
+          <div>
+            <h2 class="mb-2">Our Product Catalogue</h2>
+            <p class="text-muted">Search, filter and shop genuine smartphones from Apple and Samsung.</p>
+          </div>
+          <div class="input-group w-100 w-md-auto">
+            <input type="search" id="searchInput" class="form-control form-control-lg" placeholder="Search phones by name, brand or feature">
+            <button class="btn btn-outline-primary btn-lg search-btn" id="searchButton" type="button">Search</button>
+          </div>
         </div>
-      </div>
-      <div class="navigation-buttons">
-        <button class="nav-btn prev-btn" onclick="scrollCatalog('samsungGrid', -300)">← Previous</button>
-        <button class="nav-btn next-btn" onclick="scrollCatalog('samsungGrid', 300)">Next →</button>
+
+        <div class="btn-group mb-4" role="group">
+          <button type="button" class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+          <button type="button" class="btn btn-outline-primary filter-btn" data-filter="apple">Apple</button>
+          <button type="button" class="btn btn-outline-primary filter-btn" data-filter="samsung">Samsung</button>
+        </div>
+
+        <div class="row g-4 products-grid" id="productsGrid"></div>
       </div>
     </section>
 
-    <!-- Special Orders -->
-    <section class="upload-section" id="specialOrders">
-      <h2>Special Orders</h2>
-      <p>Attach a picture of the clothing item you wish to purchase:</p>
-      <input type="file" accept="image/*">
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row g-4">
+          <article class="col-md-6 col-xl-3">
+            <div class="info-card p-4 rounded-4 shadow-sm h-100">
+              <h3>Authentic Stock</h3>
+              <p>Original Apple and Samsung smartphones sourced from certified suppliers.</p>
+            </div>
+          </article>
+          <article class="col-md-6 col-xl-3">
+            <div class="info-card p-4 rounded-4 shadow-sm h-100">
+              <h3>Fast Support</h3>
+              <p>Our team is available to answer questions and help you choose the right phone.</p>
+            </div>
+          </article>
+          <article class="col-md-6 col-xl-3">
+            <div class="info-card p-4 rounded-4 shadow-sm h-100">
+              <h3>Secure Checkout</h3>
+              <p>Simple cart flow and secure order processing for your peace of mind.</p>
+            </div>
+          </article>
+          <article class="col-md-6 col-xl-3">
+            <div class="info-card p-4 rounded-4 shadow-sm h-100">
+              <h3>Trusted in Botswana</h3>
+              <p>Serving customers across Gaborone with fast delivery and reliable service.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>About Us</h3>
-        <p>Trusted reseller of Apple & Samsung smartphones in Botswana</p>
+  <footer class="footer bg-dark text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <h5>Aureon Collective</h5>
+          <p>Premium Apple and Samsung smartphones delivered in Botswana. Quality stock with professional customer care.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact</h5>
+          <p class="mb-1"><strong>Location:</strong> Gaborone, Botswana</p>
+          <p class="mb-1"><strong>Email:</strong> info@aureoncollective.bw</p>
+          <p class="mb-0"><strong>Phone:</strong> +267 71 234 567</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Follow</h5>
+          <div class="d-flex gap-3 mt-2">
+            <a href="#" class="text-white social-link">Facebook</a>
+            <a href="#" class="text-white social-link">Instagram</a>
+            <a href="#" class="text-white social-link">Twitter</a>
+          </div>
+        </div>
       </div>
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <p><strong>Phone:</strong> +267 74883525</p>
-        <p><strong>Email:</strong> tshimologononofo24@gmail.com</p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/26774883525" target="_blank">Chat with us</a></p>
-      </div>
-      <div class="footer-section">
-        <h3>Location</h3>
-        <p>Gaborone, Botswana</p>
-        <p>Available for nationwide delivery</p>
-      </div>
+      <div class="mt-4 text-center text-muted">&copy; 2026 Aureon Collective | Premium Botswana Smartphone Store</div>
     </div>
-    <p>&copy; 2026 Aureon Collective</p>
   </footer>
 
-  <script>
-    let slideIndex = 0;
-    let slideTimer;
-
-    function scrollCatalog(gridId, scrollAmount) {
-      const grid = document.getElementById(gridId);
-      grid.parentElement.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-
-    // Slideshow functions
-    function changeSlide(n) {
-      clearTimeout(slideTimer);
-      showSlide(slideIndex += n);
-      autoSlide();
-    }
-
-    function currentSlide(n) {
-      clearTimeout(slideTimer);
-      showSlide(slideIndex = n);
-      autoSlide();
-    }
-
-    function showSlide(n) {
-      const slides = document.getElementsByClassName('slide');
-      const dots = document.getElementsByClassName('dot');
-
-      if (n >= slides.length) {
-        slideIndex = 0;
-      }
-      if (n < 0) {
-        slideIndex = slides.length - 1;
-      }
-
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove('active');
-      }
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].classList.remove('active');
-      }
-
-      slides[slideIndex].classList.add('active');
-      dots[slideIndex].classList.add('active');
-    }
-
-    function autoSlide() {
-      slideTimer = setTimeout(() => {
-        slideIndex++;
-        showSlide(slideIndex);
-        autoSlide();
-      }, 5000); // Change slide every 5 seconds
-    }
-
-    // Initialize slideshow
-    document.addEventListener('DOMContentLoaded', () => {
-      showSlide(slideIndex);
-      autoSlide();
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

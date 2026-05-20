@@ -1,474 +1,183 @@
-/* styles.css */
+﻿:root {
+  --bg-color: #f8f9fa;
+  --surface: #ffffff;
+  --text-color: #212529;
+  --muted-color: #6c757d;
+  --border-color: #dee2e6;
+  --primary: #0d6efd;
+  --secondary: #6610f2;
+  --radius: 1rem;
+}
 
-/* Reset */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* Base */
 body {
+  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #ffffff;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
-  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
-/* Header */
-header {
-  background: #333;
-  color: white;
-  padding: 30px;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  text-align: center;
+a {
+  color: var(--primary);
 }
 
-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+a:hover {
+  color: #0b5ed7;
 }
 
-header p {
-  font-size: 1.1em;
-  opacity: 0.95;
+.navbar-brand {
+  letter-spacing: 0.02em;
 }
 
-/* Navigation */
-nav {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.hero-banner {
+  min-height: 300px;
+  background: linear-gradient(180deg, rgba(13,110,253,0.85), rgba(13,110,253,0.6)), url('Images/Iphone13.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(13,110,253,0.45);
 }
 
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  padding: 8px 15px;
-  border-radius: 5px;
+.hero-banner .container {
+  position: relative;
+  z-index: 1;
 }
 
-nav a:hover {
-  background: #333;
-  color: white;
+.hero-banner h1,
+.hero-banner p {
+  position: relative;
+  z-index: 2;
 }
 
-/* Layout */
-header, nav, main, section, footer {
-  margin-bottom: 20px;
-}
-
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Sections */
-section {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-}
-
-section h2 {
-  color: #333;
-  font-size: 2em;
-  margin-bottom: 20px;
-  border-bottom: 3px solid #333;
-  padding-bottom: 10px;
-}
-
-section h3 {
-  color: #333;
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
-
-/* Catalog grid */
-.catalog-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 15px 0;
-  margin: 20px 0;
-}
-
-.catalog {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  width: 100%;
-}
-
-.card {
-  background: #fff;
-  border: 2px solid #333;
-  border-radius: 12px;
-  padding: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  min-width: 240px;
-  flex-shrink: 0;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  border-color: #333;
-}
-
-.card h3 {
-  color: #333;
-  margin-bottom: 12px;
-  font-size: 1.3em;
-}
-
-.card p {
-  color: #333;
-  margin: 8px 0;
-  font-size: 0.95em;
-}
-
-/* Navigation Buttons */
-.navigation-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.nav-btn {
-  background: #333;
-  color: white;
+.product-card {
   border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1em;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
-.nav-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+.product-card img {
+  height: 220px;
+  object-fit: cover;
 }
 
-.nav-btn:active {
-  transform: scale(0.98);
-}
-
-/* Buy/View Details Button */
-.buy-btn {
-  background: #333;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  margin-top: 15px;
-  width: 100%;
-  transition: all 0.3s ease;
-}
-
-.buy-btn:hover {
-  background: #555;
-  transform: scale(1.02);
-}
-
-/* Forms & Upload */
-form, .upload-section {
+.product-card .card-body {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  background: #f0f0f0;
-  padding: 20px;
-  border-radius: 10px;
 }
 
-input, button {
-  padding: 12px;
-  border: 2px solid #333;
-  background: white;
-  color: #333;
-  border-radius: 8px;
-  font-size: 1em;
-  transition: all 0.3s ease;
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
 }
 
-input:focus {
-  outline: none;
-  border-color: #333;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-button {
-  cursor: pointer;
-  background: #333;
+.filter-btn.active {
+  background-color: var(--primary);
   color: white;
-  font-weight: 600;
-  border: none;
 }
 
-button:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+.filter-btn {
+  min-width: 110px;
 }
 
-/* Footer */
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 30px 20px 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.cart-counter {
+  font-size: 0.9rem;
+  padding: 0.55rem 0.9rem;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  margin-bottom: 20px;
-  text-align: left;
+.invalid-feedback {
+  display: block;
 }
 
-.footer-section {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.footer-section h3 {
-  margin-bottom: 10px;
-  font-size: 1.1em;
-  color: #fff;
-}
-
-.footer-section p {
-  margin: 8px 0;
-  font-size: 0.95em;
-  opacity: 0.95;
-}
-
-.footer-section a {
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.footer-section a:hover {
-  text-decoration: underline;
-}
-
-/* Slideshow Styles */
-#slideshowSection {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-#slideshowSection h2 {
-  color: #333;
-  font-size: 1.4em;
-  margin-bottom: 10px;
-  border-bottom: 3px solid #333;
-  padding-bottom: 8px;
-}
-
-.slideshow-container {
-  position: relative;
-  max-width: 100%;
-  margin: 0 auto;
-  background: #333;
-  border-radius: 12px;
+#imagePreview {
+  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.slide {
-  display: none;
-  animation: fade-in 0.5s ease-in-out;
-  padding: 12px 20px;
-  text-align: center;
-  color: #333;
-  background: #fff;
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slide.active {
-  display: flex;
-}
-
-.slide.fade {
-  animation: fade 1s ease-in-out;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.7;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.slide-content {
+#imagePreview img {
   width: 100%;
+  display: block;
 }
 
-.slide h3 {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-  color: #333;
-  font-weight: bold;
+body.dark-mode {
+  --bg-color: #121212;
+  --surface: #1f1f1f;
+  --text-color: #f8f9fa;
+  --muted-color: #adb5bd;
+  --border-color: #2c2c2c;
 }
 
-.slide .price {
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #333;
+body.dark-mode,
+body.dark-mode .navbar,
+body.dark-mode .card,
+body.dark-mode .bg-light,
+body.dark-mode .bg-white,
+body.dark-mode footer,
+body.dark-mode .accordion-button,
+body.dark-mode .alert {
+  background-color: var(--surface) !important;
+  color: var(--text-color) !important;
 }
 
-.slide p {
-  font-size: 0.8em;
-  margin-bottom: 8px;
-  color: #333;
-  line-height: 1.3;
+body.dark-mode a,
+body.dark-mode .nav-link,
+body.dark-mode .navbar-brand {
+  color: #e9ecef !important;
 }
 
-/* Slide navigation arrows */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -15px;
-  padding: 10px 12px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.5);
-  user-select: none;
+body.dark-mode .nav-link.active,
+body.dark-mode .nav-link:hover {
+  color: #f8f9fa !important;
 }
 
-.next {
-  right: 0;
+body.dark-mode .btn-outline-primary {
+  color: #cfe2ff;
+  border-color: rgba(206,226,255,0.6);
 }
 
-.prev {
-  left: 0;
+body.dark-mode .btn-outline-primary:hover {
+  background-color: rgba(206,226,255,0.1);
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  transform: scale(1.1);
+body.dark-mode .text-muted {
+  color: var(--muted-color) !important;
 }
 
-/* Slide indicator dots */
-.dots-container {
-  text-align: center;
-  padding: 12px;
-  background: #f5f5f5;
+body.dark-mode .form-control,
+body.dark-mode .form-select,
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus,
+body.dark-mode .input-group-text {
+  background-color: #2a2a2a;
+  border-color: var(--border-color);
+  color: var(--text-color);
 }
 
-.dot {
-  cursor: pointer;
-  height: 10px;
-  width: 10px;
-  margin: 0 6px;
-  background-color: #ccc;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.3s ease;
+body.dark-mode .card,
+body.dark-mode .alert,
+body.dark-mode .accordion-button {
+  border-color: var(--border-color) !important;
 }
 
-.dot.active {
-  background-color: #333;
-  transform: scale(1.2);
+body.dark-mode .hero-banner {
+  background: linear-gradient(180deg, rgba(13,110,253,0.95), rgba(13,110,253,0.75)), url('Images/Iphone12.png');
 }
 
-.dot:hover {
-  background-color: #666;
+footer {
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.8em;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  section {
-    padding: 20px;
-  }
-
-  .catalog {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    min-width: 100%;
-  }
-
-  .navigation-buttons {
-    flex-direction: column;
-  }
-
-  .nav-btn {
-    width: 100%;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .footer-section {
-    text-align: center;
+@media (max-width: 767px) {
+  .hero-banner {
+    min-height: 260px;
   }
 }
-
