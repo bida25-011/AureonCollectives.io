@@ -7,7 +7,24 @@ const products = [
   { id: 3, name: 'iPhone 11 Close-up', brand: 'Apple', category: 'apple', price: 3699, description: 'Close-up photography example', image: 'Images/Iphone11closeup.png' },
   { id: 4, name: 'iPhone 12', brand: 'Apple', category: 'apple', price: 4499, description: 'iPhone 12 with OLED display', image: 'Images/Iphone12.png' },
   { id: 5, name: 'iPhone 12 Close-up', brand: 'Apple', category: 'apple', price: 4599, description: 'iPhone 12 detail shot', image: 'Images/Iphone12closeup.png' },
-  { id: 6, name: 'iPhone 13', brand: 'Apple', category: 'apple', price: 5999, description: 'iPhone 13 - improved performance and camera', image: 'Images/Iphone13.png' }
+  { id: 6, name: 'iPhone 13', brand: 'Apple', category: 'apple', price: 5999, description: 'iPhone 13 - improved performance and camera', image: 'Images/Iphone13.png' },
+  { id: 7, name: 'iPhone 13 Pro', brand: 'Apple', category: 'apple', price: 6499, description: 'iPhone 13 Pro with ProMotion display', image: 'Images/13%20pro.webp' },
+  { id: 8, name: 'iPhone 14 Base', brand: 'Apple', category: 'apple', price: 5999, description: 'iPhone 14 - latest generation', image: 'Images/14%20base.webp' },
+  { id: 9, name: 'iPhone 14 Pro Max', brand: 'Apple', category: 'apple', price: 8499, description: 'iPhone 14 Pro Max - premium flagship', image: 'Images/14%20pro%20max.webp' },
+  { id: 10, name: 'iPhone 15', brand: 'Apple', category: 'apple', price: 6499, description: 'iPhone 15 with USB-C', image: 'Images/iphone%2015.webp' },
+  { id: 11, name: 'iPhone 15 Pro Max', brand: 'Apple', category: 'apple', price: 8999, description: 'iPhone 15 Pro Max - ultimate flagship', image: 'Images/iphone%2015%20pro%20max.png' },
+  { id: 12, name: 'iPhone 16 Base', brand: 'Apple', category: 'apple', price: 6999, description: 'iPhone 16 - cutting edge technology', image: 'Images/iphone%2016%20base.webp' },
+  { id: 13, name: 'iPhone 16 Pro Max', brand: 'Apple', category: 'apple', price: 9499, description: 'iPhone 16 Pro Max - next generation', image: 'Images/iphone%2016%20pro%20max.png' },
+  { id: 14, name: 'Galaxy S21 Ultra', brand: 'Samsung', category: 'samsung', price: 5499, description: 'Samsung Galaxy S21 Ultra - flagship power', image: 'Images/galaxy%20s21%20ultra.webp' },
+  { id: 15, name: 'Galaxy S21 Close-up', brand: 'Samsung', category: 'samsung', price: 5299, description: 'Galaxy S21 detailed view', image: 'Images/galaxy%20S21%20closeup.webp' },
+  { id: 16, name: 'Galaxy S22', brand: 'Samsung', category: 'samsung', price: 5699, description: 'Samsung Galaxy S22', image: 'Images/galaxy%20s22.webp' },
+  { id: 17, name: 'Galaxy S22 Ultra', brand: 'Samsung', category: 'samsung', price: 6299, description: 'Samsung Galaxy S22 Ultra - premium device', image: 'Images/S22%20ultra.webp' },
+  { id: 18, name: 'Galaxy S23', brand: 'Samsung', category: 'samsung', price: 6099, description: 'Samsung Galaxy S23 - latest power', image: 'Images/S23.webp' },
+  { id: 19, name: 'Galaxy S23 Ultra', brand: 'Samsung', category: 'samsung', price: 6799, description: 'Samsung Galaxy S23 Ultra - flagship performance', image: 'Images/S23%20ultra.webp' },
+  { id: 20, name: 'Galaxy S24', brand: 'Samsung', category: 'samsung', price: 6599, description: 'Samsung Galaxy S24 with AI features', image: 'Images/galaxy%20s24.webp' },
+  { id: 21, name: 'Galaxy S24 Base', brand: 'Samsung', category: 'samsung', price: 6399, description: 'Galaxy S24 standard edition', image: 'Images/galaxy%20S24%20base.jpg' },
+  { id: 22, name: 'Galaxy Z Flip 5', brand: 'Samsung', category: 'samsung', price: 7999, description: 'Samsung Galaxy Z Flip 5 - foldable innovation', image: 'Images/flip%205.webp' },
+  { id: 23, name: 'Galaxy Z Flip 6', brand: 'Samsung', category: 'samsung', price: 8499, description: 'Samsung Galaxy Z Flip 6 - latest foldable', image: 'Images/flip%206.webp' }
 ];
 
 let cart = JSON.parse(localStorage.getItem('aureon_cart') || '[]');
