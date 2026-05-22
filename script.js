@@ -22,7 +22,7 @@ const products = [
   { id: 18, name: 'Galaxy S23', brand: 'Samsung', category: 'samsung', price: 9000, description: 'Samsung Galaxy S23 - latest power', image: 'Images/S23.webp' },
   { id: 19, name: 'Galaxy S23 Ultra', brand: 'Samsung', category: 'samsung', price: 10200, description: 'Samsung Galaxy S23 Ultra - flagship performance', image: 'Images/S23%20ultra.webp' },
   { id: 20, name: 'Galaxy S24', brand: 'Samsung', category: 'samsung', price: 11000, description: 'Samsung Galaxy S24 with AI features', image: 'Images/galaxy%20s24.webp' },
-  { id: 21, name: 'Galaxy S24 Base', brand: 'Samsung', category: 'samsung', price: 11000, description: 'Galaxy S24 standard edition', image: 'Images/galaxy%20S24%20base.jpg' },
+  { id: 21, name: 'Galaxy S24 Ultra', brand: 'Samsung', category: 'samsung', price: 11000, description: 'Galaxy S24 standard edition', image: 'Images/galaxy%20S24%20base.jpg' },
   { id: 22, name: 'Galaxy Z Flip 5', brand: 'Samsung', category: 'samsung', price: 9800, description: 'Samsung Galaxy Z Flip 5 - foldable innovation', image: 'Images/flip%205.webp' },
   { id: 23, name: 'Galaxy Z Flip 6', brand: 'Samsung', category: 'samsung', price: 10300, description: 'Samsung Galaxy Z Flip 6 - latest foldable', image: 'Images/flip%206.webp' }
 ];
@@ -146,6 +146,9 @@ function setupRequestForm() {
   const fileInput = qs('#reqImage');
   const previewWrap = qs('#imagePreview');
   const previewImg = qs('#previewImg');
+  const typeEl = qs('#reqType');
+  const shoeWrap = qs('#shoeSizeWrap');
+  const shoeInput = qs('#reqShoeSize');
   const successMessage = qs('#requestSuccessMessage');
 
   function hidePreview() {
@@ -181,6 +184,18 @@ function setupRequestForm() {
     reader.readAsDataURL(file);
   });
 
+  // Show shoe size input only when 'shoes' is selected
+  typeEl?.addEventListener('change', () => {
+    if (!shoeWrap || !shoeInput) return;
+    if (typeEl.value === 'shoes') {
+      shoeWrap.classList.remove('d-none');
+    } else {
+      shoeWrap.classList.add('d-none');
+      shoeInput.value = '';
+      qs('#shoeSizeError').textContent = '';
+    }
+  });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     let valid = true;
@@ -189,15 +204,22 @@ function setupRequestForm() {
     const phone = qs('#reqPhone').value.trim();
     const brand = qs('#reqBrand').value.trim();
     const model = qs('#reqModel').value.trim();
+    const type = qs('#reqType')?.value || 'device';
+    const shoeSize = qs('#reqShoeSize')?.value.trim() || '';
 
     if (name.length < 2) { qs('#nameReqError').textContent = 'Enter a valid name'; valid = false; } else qs('#nameReqError').textContent = '';
     if (!email.includes('@')) { qs('#emailReqError').textContent = 'Enter a valid email'; valid = false; } else qs('#emailReqError').textContent = '';
     if (phone.replace(/\D/g, '').length < 7) { qs('#phoneReqError').textContent = 'Enter a valid phone'; valid = false; } else qs('#phoneReqError').textContent = '';
     if (!brand) { qs('#brandReqError').textContent = 'Enter a brand'; valid = false; } else qs('#brandReqError').textContent = '';
     if (!model) { qs('#modelReqError').textContent = 'Enter a model'; valid = false; } else qs('#modelReqError').textContent = '';
+    if (type === 'shoes') {
+      if (!shoeSize || isNaN(Number(shoeSize)) || Number(shoeSize) <= 0) {
+        qs('#shoeSizeError').textContent = 'Enter a valid shoe size'; valid = false;
+      } else qs('#shoeSizeError').textContent = '';
+    }
 
     if (!valid) return;
-    successMessage.textContent = 'Request submitted - we will contact you soon.';
+    successMessage.textContent = `Request submitted - we will contact you soon. (${type}${type==='shoes' && shoeSize ? ', size '+shoeSize : ''})`;
     successMessage.classList.remove('d-none');
     form.reset();
     hidePreview();

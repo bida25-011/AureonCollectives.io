@@ -46,7 +46,7 @@
         <div class="col-lg-10">
           <div class="card shadow-sm border-0">
             <div class="card-body">
-              <h2 class="card-title mb-4">Device Request Form</h2>
+              <h2 class="card-title mb-4">Request an Item</h2>
               <form id="requestForm" novalidate>
                 <div class="row g-3">
                   <div class="col-md-6">
@@ -75,6 +75,15 @@
                     <div class="invalid-feedback" id="modelReqError"></div>
                   </div>
                   <div class="col-md-6">
+                    <label for="reqType" class="form-label">Request Type</label>
+                    <select id="reqType" class="form-select" aria-label="Request type">
+                      <option value="device" selected>Device</option>
+                      <option value="clothing">Clothing</option>
+                      <option value="handbag">Handbag</option>
+                      <option value="shoes">Shoes</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
                     <label for="reqStorage" class="form-label">Storage</label>
                     <input type="text" id="reqStorage" class="form-control">
                   </div>
@@ -94,6 +103,11 @@
                     <label for="reqImage" class="form-label">Reference Image (optional)</label>
                     <input type="file" id="reqImage" class="form-control" accept="image/*">
                     <div class="invalid-feedback" id="imageReqError"></div>
+                  </div>
+                  <div class="col-md-6 d-none" id="shoeSizeWrap">
+                    <label for="reqShoeSize" class="form-label">Shoe Size</label>
+                    <input type="number" id="reqShoeSize" class="form-control" min="1" max="20" placeholder="Enter shoe size (e.g., 9)">
+                    <div class="invalid-feedback" id="shoeSizeError"></div>
                   </div>
                 </div>
                 <div id="imagePreview" class="mt-4 d-none rounded-4 overflow-hidden shadow-sm">
